@@ -1,0 +1,204 @@
+body, html {
+	margin: 0;
+	padding: 0;
+}
+
+/*animation class for svg appearing*/
+.svg-appear {
+	animation: opacity-appear 1s .5s ease forwards;
+}
+
+@keyframes opacity-appear {
+	from { opacity: 0;  }
+	to { opacity: 1; }
+}
+
+#heading {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	background-image: url('./bg-small.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 100vh;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+/*animation class for heading disappearing*/
+.heading-disappeared {
+	animation: heading-disappear 1s ease forwards;
+}
+
+@keyframes heading-disappear {
+	0% {
+		/*display: block;*/
+		width: 100%;
+		opacity: 1;
+	}
+	100% {
+		width: 0;
+		opacity: 0;
+	}
+}
+
+#heading h1 {
+	margin: 5%;
+	font-size: 4em;
+	letter-spacing: .2em;
+	color: white;
+	text-shadow: 0 0 7.5px black;
+}
+
+#heading-inner-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	min-height: 150px;
+	width: 75%;
+	opacity: 0;
+	animation: opacity-appear 1s ease forwards;
+}
+
+#heading-button {
+	cursor: pointer;
+	background-color: limegreen;
+	box-shadow: 0 0 2px black;
+	border: none;
+	border-radius: 5px;
+	color: white;
+	padding: .8em 1.75em;
+	font-size: 1em;
+	outline: none;
+}
+
+#heading-button:hover {
+	box-shadow: 0 0 1px black;
+	transform: scale(.995);
+}
+
+svg {
+	display: none;
+}
+
+#map {
+	opacity: 0;
+	margin: 1% auto;
+	width: 960px;
+	height: 600px;
+}
+
+#chart {
+	width: 960px;
+	height: 450px;
+	margin: 20px auto;
+}
+
+.country {
+	stroke: black;
+	stroke-width: .5;
+	cursor: pointer;
+}
+
+.selected-country {
+	fill: gold !important;
+}
+
+.legend-text, .legend-text-unknown {
+	font-style: italic;
+}
+
+/*#tooltip {
+	padding: 10px;
+}*/
+
+#tooltip::after {
+	content: " ";
+	position: absolute;
+	bottom: 100%;
+	left: 50%;
+	margin-left: -5px;
+	border-width: 5px;
+	border-style: solid;
+	border-color: transparent transparent black transparent;
+}
+
+select {
+	display: block;
+	margin: 2%;
+	padding: 5px;
+	border-radius: 5px;
+	box-shadow: 0 0 1px black;
+}
+
+select:focus {
+	outline: none;
+}
+
+.x-axis .domain {
+	display: none;
+}
+
+.y-axis .domain, .y-axis line {
+	opacity: .5;
+	stroke-width: .75;
+}
+
+.axis .tick {
+	font-style: italic;
+	font-size: 1.1em;
+}
+
+/*#bar-tooltip {
+	padding: 7.5px;
+}*/
+
+#tooltip, #bar-tooltip {
+	position: absolute;
+	z-index: 1;
+	opacity: 0;
+	background-color: black;
+	color: whitesmoke;
+	text-align: center;
+	border-radius: 3px;
+}
+
+.bar {
+	stroke: black;
+	stroke-width: .25;
+}
+
+.chart-title {
+	text-anchor: middle;
+	font-style: italic;
+	font-size: 1.25em;
+}
+
+#up {
+	display: inline;
+	border: 1px solid black;
+	border-radius: 50%;
+	padding: 5px 10px;
+	text-align: center;
+	text-decoration: none;
+	color: black;
+	font-size: 1.25em;
+}
+#up #up-hat {
+	display: inline-block;
+	font-weight: 600;
+}
+
+#controllers {
+	opacity: 0;
+	width: 100%;
+	/*display: flex;*/
+	display: none;
+	justify-content: center;
+	align-items: center;
+}

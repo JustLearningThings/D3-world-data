@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>World data</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<section id="heading">
+		<div id="heading-inner-container">
+			<h1 id="heading-title">World data</h1>
+			<button id="heading-button">Explore</button>
+		</div>
+	</section>
+
+	<svg id="map"></svg>
+
+	<div id="controllers">
+		<select>
+		<option value="urban_population" selected>Urban population (% of total population)</option>
+		<option value="forest_area">Forest area (% of land area)</option>
+		<option value="co2_emissions">CO2 emissions (kt)</option>
+		<option value="arable_land">Arable land (% of land area)</option>
+	</select>
+	
+	<a id="up" href="#map">
+		<span id="up-hat">&uparrow;</span>
+	</a>
+	</div>
+
+	<svg id="chart"></svg>
+
+	<div id="tooltip"></div>
+	<div id="bar-tooltip"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.13.0/d3.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js"></script>
+<script type="text/javascript" src="./scripts/bar-chart.js"></script>
+<script type="text/javascript" src="./scripts/map.js"></script>
+<script type="text/javascript" src="./scripts/app.js"></script>
+</body>
+</html>
